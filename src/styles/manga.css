@@ -1,0 +1,143 @@
+/* ── Screentone halftone overlay ── */
+.screentone {
+  position: relative;
+}
+.screentone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.12) 1px, transparent 1px);
+  background-size: 6px 6px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Ink borders ── */
+.ink-border {
+  border: var(--border-ink);
+  box-shadow: var(--shadow-panel);
+}
+
+.ink-border-thick {
+  border: var(--border-thick);
+  box-shadow: var(--shadow-panel-lg);
+}
+
+/* ── Panel base ── */
+.manga-panel {
+  background: var(--paper-white);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-panel);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Speech bubbles ── */
+.speech-bubble {
+  background: var(--paper-white);
+  border: var(--border-ink);
+  border-radius: 12px;
+  padding: 12px 16px;
+  position: relative;
+  box-shadow: 3px 3px 0 var(--ink-black);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 24px;
+  border: 10px solid transparent;
+  border-top-color: var(--ink-black);
+  border-bottom: 0;
+}
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 26px;
+  border: 8px solid transparent;
+  border-top-color: var(--paper-white);
+  border-bottom: 0;
+  z-index: 1;
+}
+
+/* thought bubble */
+.thought-bubble {
+  background: var(--paper-white);
+  border: var(--border-ink);
+  border-radius: 50px;
+  padding: 14px 20px;
+  box-shadow: 3px 3px 0 var(--ink-black);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* ── SFX stamp text ── */
+.sfx-text {
+  font-family: var(--font-manga);
+  letter-spacing: 0.05em;
+  -webkit-text-stroke: 2px var(--ink-black);
+  color: var(--paper-white);
+  text-shadow:
+    3px 3px 0 var(--ink-black),
+   -1px -1px 0 var(--ink-black),
+    1px -1px 0 var(--ink-black),
+   -1px  1px 0 var(--ink-black);
+  user-select: none;
+}
+
+/* ── Action stamp button ── */
+.stamp-btn {
+  font-family: var(--font-manga);
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  background: var(--ink-black);
+  color: var(--paper-white);
+  border: var(--border-thick);
+  padding: 10px 28px;
+  box-shadow: var(--shadow-panel);
+  transition: transform 0.1s, box-shadow 0.1s;
+  text-transform: uppercase;
+}
+.stamp-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--ink-black);
+}
+.stamp-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink-black);
+}
+
+/* ── Diagonal clip panels ── */
+.diagonal-right {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+}
+.diagonal-left {
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ── Chapter heading ── */
+.chapter-heading {
+  font-family: var(--font-manga);
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  letter-spacing: 0.1em;
+  border-bottom: var(--border-thick);
+  padding-bottom: 6px;
+  text-transform: uppercase;
+}
+
+/* ── Panel number badge ── */
+.panel-number {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-family: var(--font-manga);
+  font-size: 0.75rem;
+  background: var(--ink-black);
+  color: var(--paper-white);
+  padding: 2px 6px;
+  z-index: 10;
+}

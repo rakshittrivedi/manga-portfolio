@@ -1,0 +1,129 @@
+.ptc {
+  perspective: 1000px;
+  cursor: pointer;
+  height: 380px;
+  min-width: 0;
+}
+
+.ptc__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ptc__face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ptc__face--back {
+  transform: rotateY(-180deg);
+  background: var(--ink-black);
+  color: var(--paper-white);
+}
+
+/* ── Front ── */
+.ptc__front-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 20px;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.ptc__sfx {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+}
+
+.ptc__title {
+  font-family: var(--font-manga);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+}
+
+.ptc__face--back .ptc__title {
+  -webkit-text-stroke: 1px var(--paper-white);
+}
+
+.ptc__tagline {
+  font-size: 0.85rem;
+}
+
+.ptc__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.ptc__tech {
+  font-family: var(--font-manga);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  border: 2px solid var(--ink-black);
+  padding: 2px 8px;
+  background: var(--paper-white);
+}
+
+.ptc__flip-hint {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  opacity: 0.4;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* ── Back ── */
+.ptc__back-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px 20px;
+  height: 100%;
+}
+
+.ptc__desc {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  font-weight: 700;
+  opacity: 0.85;
+  flex: 1;
+}
+
+.ptc__links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ptc__link-btn {
+  font-size: 0.9rem;
+  padding: 8px 18px;
+}
+
+.ptc__link-btn--outline {
+  background: transparent;
+  color: var(--paper-white);
+  border-color: var(--paper-white);
+  box-shadow: 3px 3px 0 var(--paper-white);
+}
+
+.ptc__link-btn--outline:hover {
+  background: var(--paper-white);
+  color: var(--ink-black);
+}
+
+@media (max-width: 480px) {
+  .ptc { height: 340px; }
+}

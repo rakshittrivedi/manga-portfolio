@@ -1,0 +1,127 @@
+.ttt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+}
+
+.ttt__title {
+  font-family: var(--font-manga);
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  border-bottom: var(--border-thick);
+  padding-bottom: 6px;
+  width: 100%;
+  text-align: center;
+}
+
+.ttt__difficulty {
+  display: flex;
+  gap: 8px;
+}
+
+.ttt__diff-btn {
+  font-family: var(--font-manga);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  border: var(--border-ink);
+  padding: 6px 18px;
+  background: var(--paper-white);
+  box-shadow: 3px 3px 0 var(--ink-black);
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.ttt__diff-btn--active,
+.ttt__diff-btn:hover {
+  background: var(--ink-black);
+  color: var(--paper-white);
+  transform: translate(-1px, -1px);
+}
+
+.ttt__scores {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.ttt__score {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  border: var(--border-ink);
+  padding: 8px;
+  font-family: var(--font-manga);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  box-shadow: 2px 2px 0 var(--ink-black);
+}
+
+.ttt__score--draw {
+  background: var(--ink-black);
+  color: var(--paper-white);
+}
+
+.ttt__score-val {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.ttt__board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-panel);
+  width: 100%;
+  max-width: 280px;
+}
+
+.ttt__cell {
+  aspect-ratio: 1;
+  border: var(--border-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: var(--paper-white);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.ttt__cell:not(:disabled):hover {
+  background: var(--off-white);
+}
+
+.ttt__cell--win {
+  background: var(--ink-black);
+}
+
+.ttt__cell--win .ttt__icon {
+  filter: invert(1);
+}
+
+.ttt__icon { user-select: none; }
+
+.ttt__result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ttt__reset-btn {
+  font-size: 1rem;
+  padding: 8px 24px;
+}
+
+.ttt__turn {
+  font-family: var(--font-manga);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}

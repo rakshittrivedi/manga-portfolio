@@ -1,0 +1,169 @@
+.about {
+  background: var(--off-white);
+  padding: 80px 40px;
+  border-top: var(--border-thick);
+  position: relative;
+}
+
+.about__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about__heading-wrap {
+  position: relative;
+  padding-left: 0;
+}
+
+.about__heading {
+  display: inline-block;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ── Left panel ── */
+.about__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  position: relative;
+}
+
+.about__portrait svg {
+  width: 100%;
+  max-width: 260px;
+}
+
+.about__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.about__stat {
+  border: var(--border-ink);
+  padding: 10px;
+  text-align: center;
+  box-shadow: 3px 3px 0 var(--ink-black);
+  background: var(--paper-white);
+}
+
+.about__stat-value {
+  display: block;
+  font-family: var(--font-manga);
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+}
+
+.about__stat-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.65;
+}
+
+/* ── Right panel ── */
+.about__right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about__thought {
+  align-self: flex-start;
+  max-width: 90%;
+}
+
+.about__speech {
+  align-self: flex-end;
+  max-width: 90%;
+}
+
+/* ── Chapter timeline ── */
+.about__chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-panel);
+}
+
+.about__chapter {
+  padding: 16px 20px;
+  border-bottom: var(--border-ink);
+  background: var(--paper-white);
+  transition: background 0.15s;
+}
+
+.about__chapter:last-child {
+  border-bottom: none;
+}
+
+.about__chapter:hover {
+  background: var(--ink-black);
+  color: var(--paper-white);
+}
+
+.about__chapter-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.about__chapter-num {
+  font-family: var(--font-manga);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  background: var(--ink-black);
+  color: var(--paper-white);
+  padding: 2px 8px;
+  flex-shrink: 0;
+}
+
+.about__chapter:hover .about__chapter-num {
+  background: var(--paper-white);
+  color: var(--ink-black);
+}
+
+.about__chapter-title {
+  font-family: var(--font-manga);
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+}
+
+.about__chapter-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 20px;
+  }
+
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__thought,
+  .about__speech {
+    max-width: 100%;
+    align-self: stretch;
+  }
+}
