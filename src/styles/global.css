@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&family=Space+Grotesk:wght@400;700&display=swap');
 
 :root {
   --ink-black: #0a0a0a;
@@ -65,7 +65,7 @@ img, svg {
 
 /* ── Footer ── */
 .site-footer {
-  background: var(--ink-black);
+  background: var(--gradient-cosmic);
   color: var(--paper-white);
   text-align: center;
   padding: 28px 20px;
@@ -73,4 +73,21 @@ img, svg {
   font-size: 1rem;
   letter-spacing: 0.06em;
   border-top: var(--border-thick);
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 20% 50%, rgba(124, 58, 237, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 50%, rgba(244, 114, 182, 0.15) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.site-footer p {
+  position: relative;
+  z-index: 1;
 }

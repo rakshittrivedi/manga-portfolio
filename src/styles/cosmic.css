@@ -1,0 +1,185 @@
+/* ── Cosmic Manga Theme — Horimiya pastels × Solo Leveling neon ── */
+
+:root {
+  /* Cosmic palette */
+  --cosmic-deep: #0d0221;
+  --cosmic-mid: #1a0a3e;
+  --cosmic-purple: #7c3aed;
+  --cosmic-violet: #a78bfa;
+  --cosmic-blue: #38bdf8;
+  --cosmic-cyan: #22d3ee;
+  --cosmic-pink: #f472b6;
+  --cosmic-rose: #fda4af;
+  --cosmic-peach: #fdba74;
+  --cosmic-mint: #6ee7b7;
+  --cosmic-gold: #fbbf24;
+
+  /* Gradients */
+  --gradient-cosmic: linear-gradient(135deg, #0d0221 0%, #1a0a3e 35%, #312e81 70%, #0d0221 100%);
+  --gradient-aurora: linear-gradient(120deg, var(--cosmic-purple), var(--cosmic-blue), var(--cosmic-pink), var(--cosmic-cyan));
+  --gradient-romcom: linear-gradient(135deg, #fda4af 0%, #f472b6 40%, #a78bfa 100%);
+  --gradient-solo: linear-gradient(180deg, #1e1b4b 0%, #312e81 50%, #0c4a6e 100%);
+  --gradient-panel-left: linear-gradient(160deg, #0d0221 0%, #1e1b4b 50%, #312e81 100%);
+  --gradient-panel-center: linear-gradient(180deg, #f5f0e8 0%, #ede8dc 60%, #e8e0f0 100%);
+  --gradient-panel-right: linear-gradient(135deg, #ede8dc 0%, #fce7f3 50%, #e0e7ff 100%);
+
+  /* Glows */
+  --glow-purple: 0 0 20px rgba(124, 58, 237, 0.6), 0 0 60px rgba(124, 58, 237, 0.2);
+  --glow-cyan: 0 0 20px rgba(34, 211, 238, 0.5), 0 0 40px rgba(34, 211, 238, 0.15);
+  --glow-pink: 0 0 16px rgba(244, 114, 182, 0.5);
+  --glow-knight: 0 0 30px rgba(167, 139, 250, 0.8), 0 0 80px rgba(56, 189, 248, 0.4), 0 0 120px rgba(124, 58, 237, 0.2);
+
+  /* Holographic */
+  --holo-border: linear-gradient(135deg, var(--cosmic-cyan), var(--cosmic-purple), var(--cosmic-pink), var(--cosmic-cyan));
+  --holo-shimmer: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%);
+}
+
+/* ── Cosmic section backgrounds ── */
+.bg-cosmic {
+  background: var(--gradient-cosmic);
+  color: var(--paper-white);
+}
+
+.bg-aurora-subtle {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(124, 58, 237, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(244, 114, 182, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 30% at 50% 90%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+    var(--paper-white);
+}
+
+.bg-about-cosmic {
+  background:
+    radial-gradient(ellipse 70% 50% at 10% 20%, rgba(253, 164, 175, 0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 80%, rgba(167, 139, 250, 0.12) 0%, transparent 50%),
+    var(--off-white);
+}
+
+.bg-projects-cosmic {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 100% 100%, rgba(124, 58, 237, 0.06) 0%, transparent 45%),
+    var(--paper-white);
+}
+
+.bg-contact-cosmic {
+  background:
+    radial-gradient(ellipse 60% 50% at 0% 50%, rgba(34, 211, 238, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 100% 30%, rgba(244, 114, 182, 0.1) 0%, transparent 50%),
+    var(--off-white);
+}
+
+/* ── Holographic card border ── */
+.holo-border {
+  position: relative;
+  border: none !important;
+}
+.holo-border::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: var(--holo-border);
+  background-size: 300% 300%;
+  animation: holo-shift 4s ease infinite;
+  z-index: -1;
+  border-radius: inherit;
+}
+.holo-border::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  z-index: -1;
+}
+
+/* ── Neon circuit lines overlay ── */
+.circuit-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image:
+    linear-gradient(90deg, var(--cosmic-cyan) 1px, transparent 1px),
+    linear-gradient(var(--cosmic-cyan) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 70%);
+}
+
+/* ── Cosmic role tags ── */
+.cosmic-tag {
+  font-family: var(--font-manga);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  border: var(--border-ink);
+  padding: 4px 10px;
+  background: var(--paper-white);
+  box-shadow: 2px 2px 0 var(--ink-black);
+  transition: transform 0.2s var(--transition-snap), box-shadow 0.2s, background 0.2s;
+}
+.cosmic-tag:hover {
+  transform: translate(-2px, -2px) scale(1.05);
+  box-shadow: 4px 4px 0 var(--ink-black), var(--glow-pink);
+  background: linear-gradient(135deg, #fce7f3, #e0e7ff);
+}
+
+.cosmic-tag--pulse {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+/* ── Orbital ring decoration ── */
+.orbital-ring {
+  position: absolute;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbit-spin 20s linear infinite;
+}
+
+/* ── Narration box (manga caption) ── */
+.narration-box {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(0.82rem, 1.3vw, 0.95rem);
+  line-height: 1.65;
+  padding: 14px 18px;
+  border: var(--border-ink);
+  background: linear-gradient(135deg, rgba(253, 164, 175, 0.15), rgba(167, 139, 250, 0.1));
+  box-shadow: 3px 3px 0 var(--ink-black);
+  position: relative;
+}
+.narration-box::before {
+  content: 'NARRATOR';
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  font-family: var(--font-manga);
+  font-size: 0.65rem;
+  font-style: normal;
+  letter-spacing: 0.15em;
+  background: var(--ink-black);
+  color: var(--cosmic-pink);
+  padding: 1px 8px;
+}
+
+/* ── Stamp button cosmic variant ── */
+.stamp-btn--cosmic {
+  background: var(--gradient-aurora);
+  background-size: 200% 200%;
+  animation: holo-shift 3s ease infinite;
+  border-color: var(--ink-black);
+  position: relative;
+  overflow: hidden;
+}
+.stamp-btn--cosmic::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--holo-shimmer);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+.stamp-btn--cosmic:hover {
+  box-shadow: 8px 8px 0 var(--ink-black), var(--glow-purple);
+}

@@ -1,0 +1,17 @@
+.narration-box--roast::before {
+  content: 'ROAST MODE';
+  color: var(--cosmic-cyan);
+}
+
+.narration-box em {
+  color: var(--cosmic-purple);
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: var(--cosmic-pink);
+  text-underline-offset: 3px;
+}
+
+.narration-box strong {
+  font-family: var(--font-manga);
+  letter-spacing: 0.04em;
+}

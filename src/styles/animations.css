@@ -55,8 +55,61 @@
   100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
 
+/* ── Cosmic aura pulse ── */
+@keyframes aura-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1; transform: scale(1.08); }
+}
+
+/* ── Heartbeat (rom-com micro) ── */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14%       { transform: scale(1.08); }
+  28%       { transform: scale(1); }
+  42%       { transform: scale(1.05); }
+  70%       { transform: scale(1); }
+}
+
+/* ── Holographic shimmer ── */
+@keyframes holo-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Orbital spin ── */
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Cosmic panel entrance ── */
+@keyframes cosmic-slam {
+  0%   { transform: translateY(100px) scale(0.85) rotateX(15deg); opacity: 0; filter: blur(8px); }
+  60%  { transform: translateY(-6px) scale(1.02) rotateX(-2deg); opacity: 1; filter: blur(0); }
+  100% { transform: translateY(0) scale(1) rotateX(0deg); opacity: 1; }
+}
+
+/* ── Neon flicker ── */
+@keyframes neon-flicker {
+  0%, 100% { opacity: 1; }
+  92%       { opacity: 1; }
+  93%       { opacity: 0.7; }
+  94%       { opacity: 1; }
+  96%       { opacity: 0.8; }
+  97%       { opacity: 1; }
+}
+
 /* ── Utility classes ── */
 .animate-float    { animation: float 3s ease-in-out infinite; }
 .animate-sfx-pop  { animation: sfx-pop 0.4s var(--transition-snap) forwards; }
 .animate-shake    { animation: shake 0.5s ease-in-out; }
 .animate-stamp-in { animation: stamp-in 0.5s var(--transition-snap) forwards; }
+.animate-aura     { animation: aura-pulse 3s ease-in-out infinite; }
+.animate-heartbeat { animation: heartbeat 2s ease-in-out infinite; }
+.animate-neon     { animation: neon-flicker 4s ease-in-out infinite; }
