@@ -1,7 +1,8 @@
 .projects {
-  background: var(--paper-white);
   padding: 80px 40px;
   border-top: var(--border-thick);
+  position: relative;
+  overflow: hidden;
 }
 
 .projects__inner {
@@ -16,7 +17,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 .projects__subhead {
