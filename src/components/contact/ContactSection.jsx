@@ -42,8 +42,9 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="contact" ref={ref} aria-label="Contact section">
-      <ParticleBurst trigger={burstTrigger} count={56} />
+    <section id="contact" className="contact bg-contact-cosmic" ref={ref} aria-label="Contact section">
+      <div className="circuit-overlay" aria-hidden="true" />
+      <ParticleBurst trigger={burstTrigger} count={56} cosmic />
 
       <motion.div
         className="contact__inner"
@@ -56,8 +57,8 @@ export default function ContactSection() {
           <span className="panel-number">004</span>
           <h2 className="chapter-heading">CONTACT — SEND THE SCROLL</h2>
           <p className="contact__subhead">
-            Got a mission? A collab? A bug that has survived 47 stack overflows?<br />
-            <strong>Summon Rakshit.</strong>
+            Got a mission? A collab? A bug that survived 47 stack overflows and three production deploys?<br />
+            <strong>Summon Rakshit.</strong> He responds faster than light — theoretically.
           </p>
         </motion.div>
 
@@ -126,7 +127,7 @@ export default function ContactSection() {
 
                   <motion.button
                     type="submit"
-                    className={`stamp-btn contact__submit ${status === 'loading' ? 'contact__submit--loading' : ''}`}
+                    className={`stamp-btn stamp-btn--cosmic contact__submit ${status === 'loading' ? 'contact__submit--loading' : ''}`}
                     disabled={status === 'loading'}
                     whileHover={status !== 'loading' ? { scale: 1.04 } : {}}
                     whileTap={status !== 'loading' ? { scale: 0.96 } : {}}
@@ -150,9 +151,9 @@ export default function ContactSection() {
 
           {/* Info panel */}
           <motion.div className="contact__info" variants={itemVariant}>
-            <div className="speech-bubble contact__bubble">
+            <div className="speech-bubble contact__bubble contact__bubble--cosmic">
               <p style={{ fontWeight: 700, lineHeight: 1.6 }}>
-                I respond faster than Goku powers up. Hit me up for freelance work, collab, or just to roast each other's code.
+                I respond faster than Goku powers up — and with fewer screaming episodes. Hit me up for freelance, collab, or a poetic roast of your codebase.
               </p>
             </div>
 
@@ -161,11 +162,11 @@ export default function ContactSection() {
                 <span className="contact__social-icon">✉</span>
                 <span>rakshittrivedi106@mail.com</span>
               </a>
-              <a href="https://github.com" className="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <a href="https://github.com/rakshittrivedi" className="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
                 <span className="contact__social-icon">◈</span>
-                <span>GitHub</span>
+                <span>github.com/rakshittrivedi</span>
               </a>
-              <a href="https://linkedin.com" className="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <a href="https://linkedin.com/in/rakshittrivedi" className="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
                 <span className="contact__social-icon">◉</span>
                 <span>LinkedIn</span>
               </a>

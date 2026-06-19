@@ -1,7 +1,8 @@
 .contact {
-  background: var(--off-white);
   padding: 80px 40px;
   border-top: var(--border-thick);
+  position: relative;
+  overflow: hidden;
 }
 
 .contact__inner {
@@ -72,14 +73,20 @@
   padding: 10px 14px;
   outline: none;
   box-shadow: 3px 3px 0 var(--ink-black);
-  transition: box-shadow 0.15s, transform 0.15s;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
   width: 100%;
   color: var(--ink-black);
 }
 
 .contact__input:focus {
-  box-shadow: 5px 5px 0 var(--ink-black);
+  box-shadow: 5px 5px 0 var(--ink-black), var(--glow-cyan);
   transform: translate(-1px, -1px);
+  border-color: var(--cosmic-purple);
+}
+
+.contact__bubble--cosmic {
+  background: linear-gradient(135deg, #fce7f3, #e0e7ff);
+  box-shadow: 3px 3px 0 var(--ink-black), var(--glow-pink);
 }
 
 .contact__input--error {

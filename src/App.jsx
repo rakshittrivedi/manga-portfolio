@@ -17,10 +17,10 @@ export default function App() {
       </main>
       <footer className="site-footer">
         <p>
-          © {new Date().getFullYear()} RAKSHIT TRIVEDI — Built with React, Framer Motion, and unreasonable amounts of caffeine.
+          © {new Date().getFullYear()} RAKSHIT TRIVEDI — Built with React, Framer Motion, cosmic gradients, and unreasonable amounts of caffeine.
         </p>
-        <p style={{ opacity: 0.45, fontSize: '0.75rem', marginTop: 4 }}>
-          If your portfolio doesn't have speed lines, does it even exist?
+        <p style={{ opacity: 0.55, fontSize: '0.75rem', marginTop: 4 }}>
+          Not your average portfolio. This is a cosmic rom‑com saga of commits, caffeine, and questionable life choices.
         </p>
       </footer>
       <GameHub />
