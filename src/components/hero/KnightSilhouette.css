@@ -1,0 +1,74 @@
+.knight-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.knight__body {
+  transition: transform 0.12s ease-out;
+  transform-style: preserve-3d;
+  position: relative;
+  z-index: 3;
+}
+
+.knight__svg {
+  width: clamp(160px, 22vw, 280px);
+  filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.6));
+}
+
+.knight__aura {
+  position: absolute;
+  width: clamp(200px, 28vw, 340px);
+  height: clamp(200px, 28vw, 340px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.5) 0%, rgba(56, 189, 248, 0.2) 40%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.knight__orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.knight__orbit--1 {
+  width: clamp(220px, 32vw, 380px);
+  height: clamp(220px, 32vw, 380px);
+  animation: orbit-spin 18s linear infinite;
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.knight__orbit--2 {
+  width: clamp(260px, 38vw, 440px);
+  height: clamp(260px, 38vw, 440px);
+  animation: orbit-spin 28s linear infinite reverse;
+  border-style: dashed;
+  border-color: rgba(244, 114, 182, 0.15);
+}
+
+.knight__orbit--1::after,
+.knight__orbit--2::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cosmic-cyan);
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: var(--glow-cyan);
+}
+
+.knight__orbit--2::after {
+  background: var(--cosmic-pink);
+  box-shadow: var(--glow-pink);
+  top: auto;
+  bottom: -3px;
+}

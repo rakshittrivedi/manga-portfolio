@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
  * SpeedLines — canvas-based radial speed lines burst.
  * Fires once on mount, then idles with low-opacity lines.
  */
-export default function SpeedLines({ active = true }) {
+export default function SpeedLines({ active = true, cosmic = false }) {
   const canvasRef = useRef(null)
 
   useEffect(() => {
@@ -46,10 +46,14 @@ export default function SpeedLines({ active = true }) {
 
         const alpha = baseOpacity * (0.6 + 0.4 * Math.sin(i * 1.3 + frame * 0.05))
 
+        const lineColor = cosmic
+          ? `rgba(${i % 3 === 0 ? '167, 139, 250' : i % 3 === 1 ? '56, 189, 248' : '244, 114, 182'}, ${alpha})`
+          : `rgba(10, 10, 10, ${alpha})`
+
         ctx.beginPath()
         ctx.moveTo(x1, y1)
         ctx.lineTo(x2, y2)
-        ctx.strokeStyle = `rgba(10, 10, 10, ${alpha})`
+        ctx.strokeStyle = lineColor
         ctx.lineWidth = burst ? 1.5 - (frame / 30) : 0.8
         ctx.stroke()
       }
@@ -64,7 +68,7 @@ export default function SpeedLines({ active = true }) {
       window.removeEventListener('resize', resize)
       cancelAnimationFrame(raf)
     }
-  }, [active])
+  }, [active, cosmic])
 
   return (
     <canvas
